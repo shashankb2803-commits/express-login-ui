@@ -6,12 +6,13 @@ pipeline {
         pollSCM('H/5 * * * *')
     }
 
-    environment {
-        APP_NAME       = "express-login-ui"
-        IMAGE_NAME     = "shashankb28/express-login-ui"
-        CONTAINER_PORT = "3000"
-        HOST_PORT      = "3000"
-    }
+ environment {
+    APP_NAME       = "express-login-ui"
+    IMAGE_NAME     = "shashankb28/express-login-ui"
+    CONTAINER_PORT = "3000"
+    HOST_PORT      = "3000"
+    PATH           = "/usr/local/bin:${env.PATH}"
+}
 
     stages {
 
