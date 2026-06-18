@@ -36,14 +36,8 @@ pipeline {
 stage('Build Docker Image') {
     steps {
         sh '''
-            echo "Building Docker Image"
-
             export PATH=$PATH:/usr/local/bin
-
-            which docker
-            docker --version
-
-            docker build -t $IMAGE_NAME .
+            docker build ...
         '''
     }
 }
