@@ -33,15 +33,20 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                sh '''
-                    echo "Building Docker Image"
+stage('Build Docker Image') {
+    steps {
+        sh '''
+            echo "Building Docker Image"
 
-                    docker build -t $IMAGE_NAME .
-                '''
-            }
-        }
+            export PATH=$PATH:/usr/local/bin
+
+            which docker
+            docker --version
+
+            docker build -t $IMAGE_NAME .
+        '''
+    }
+}
 
         stage('Docker Login') {
 
