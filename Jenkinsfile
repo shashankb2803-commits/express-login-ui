@@ -38,7 +38,8 @@ stage('Build Docker Image') {
     steps {
         sh '''
             export PATH=$PATH:/usr/local/bin
-            docker build ...
+
+            docker build -t $IMAGE_NAME .
         '''
     }
 }
